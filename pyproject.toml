@@ -1,0 +1,32 @@
+[project]
+name = "llmdemo"
+version = "0.1.0"
+description = "Add a short description here"
+authors = [
+    { name = "dragove", email = "dragove@qq.com" }
+]
+dependencies = [
+    "transformers~=4.29.2",
+    "protobuf~=4.23.2",
+    "cpm_kernels~=1.0.11",
+    "torch~=2.0.1",
+    "gradio~=3.33.1",
+    "mdtex2html~=1.2.0",
+    "sentencepiece~=0.1.99",
+    "accelerate~=0.19.0",
+    "streamlit~=1.23.1",
+    "streamlit-chat~=0.0.2.2",
+    "text2vec~=1.1.8",
+]
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+
+[tool.hatch.metadata]
+allow-direct-references = true
