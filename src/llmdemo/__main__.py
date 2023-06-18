@@ -1,4 +1,4 @@
 from prompt import *
 
 
-prompt3()
+prompt2()
