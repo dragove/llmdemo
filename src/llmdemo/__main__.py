@@ -1,4 +1,4 @@
 from prompt import *
 
 
-infer5()
+prompt5()
