@@ -1,4 +1,3 @@
 from prompt import *
 
-
-prompt5()
+trans4()

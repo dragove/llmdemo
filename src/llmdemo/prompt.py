@@ -1,4 +1,5 @@
 from llmdemo import model, tokenizer
+import time
 
 
 def chat(prompt):
@@ -150,3 +151,69 @@ def infer5():
 将 Anger 值格式化为布尔值。
 
 评论文本: ```{lamp_review}```""")
+
+
+def infer6():
+    promptchat("""c++ 中如何分离模板的声明和定义？""")
+
+
+def trans1():
+    prompt = """
+将以下中文翻译成英文:
+```您好，我想订购一个搅拌机。```
+"""
+    response = promptchat(prompt)
+    print(response)
+
+
+def trans2():
+    prompt = """
+请告诉我以下文本是什么语种:
+```Combien coûte le lampadaire?```
+"""
+    response = promptchat(prompt)
+    print(response)
+
+
+def trans3():
+    prompt = """
+请将以下文本翻译成中文，分别展示成正式与非正式两种语气:
+```Would you like to order a pillow?```
+"""
+    response = promptchat(prompt)
+    print(response)
+
+
+def trans4():
+    user_messages = [
+        # System performance is slower than normal
+        "La performance du système est plus lente que d'habitude.",
+        # My monitor has pixels that are not lighting
+        "Mi monitor tiene píxeles que no se iluminan.",
+        # My mouse is not working
+        "Il mio mouse non funziona",
+        # My keyboard has a broken control key
+        "Mój klawisz Ctrl jest zepsuty",
+        # My screen is flashing
+        "我的屏幕在闪烁"
+    ]
+    for issue in user_messages:
+        time.sleep(20)
+        prompt = f"告诉我以下文本是什么语种，直接输出语种，如法语，无需输出标点符号: ```{issue}```"
+        lang = promptchat(prompt)
+        print(f"原始消息 ({lang}): {issue}\n")
+
+        prompt = f"""
+        将以下消息分别翻译成英文和中文，并写成
+        中文翻译：xxx
+        英文翻译：yyy
+        的格式：
+        ```{issue}```
+        """
+        response = promptchat(prompt)
+        print(response, "\n=========================================")
+
+
+def expand1():
+    pass
+
